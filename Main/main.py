@@ -104,7 +104,7 @@ if base_locations:
 
     # Press bomb key for the selected base
     if base_number == 3:
-        for i in range(0, math.ceil(550 / bombsize)):
+        for i in range(0, math.ceil(550 / bombsize)):  # Top tier (8.0 - 13.7)
             pdi.press(bombkey)
             time.sleep(0.1)
         print("Bombs away")
