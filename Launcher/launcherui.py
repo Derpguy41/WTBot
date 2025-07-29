@@ -31,7 +31,7 @@ def run_script():
 
 app = ctk.CTk()
 app.title("WTBot")
-app.geometry("400x250")
+app.geometry("300x350")
 
 # Debug switch
 debug_var = ctk.BooleanVar()

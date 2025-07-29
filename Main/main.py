@@ -93,6 +93,8 @@ if base_locations:
     center_y = random_base[1] + target_img.shape[0] // 2
 
     pdi.moveTo(center_x, center_y, duration=2) # Move the mouse to the center of the detected base
+    time.sleep(0.5)
+    pdi.moveTo(pyautogui.position().x, pyautogui.position().y - 50, duration=3) # Begin climb
     print("Mouse moved to correct position of base, begin climbing")
     pdi.press(sightkey)
 
