@@ -8,6 +8,9 @@ import math
 import pydirectinput as pdi
 import argparse
 import sys
+import os
+
+print(os.getcwd())
 
 bombkey = 'space' # Bomb keybind
 sightkey = 'f7'  # Key for Bomb Sight
@@ -78,7 +81,7 @@ if debug:
     time.sleep(3)
 pdi.press(vckey)
 time.sleep(0.5)
-base_locations, target_img = searchScreen("BaseIdentify.png")
+base_locations, target_img = searchScreen("Main/BaseIdentify.png")
 
 if base_locations:
     print("Bases found!")

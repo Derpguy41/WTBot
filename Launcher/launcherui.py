@@ -23,7 +23,7 @@ def run_script():
     bomb_size_entry.configure(border_color="gray")
 
     subprocess.Popen([
-        "python", "../main.py",
+        "python", "./Main/main.py",
         "--debug", str(debug),
         "--bombsize", str(bomb_size),
         "--base", str(base_number)
