@@ -6,20 +6,28 @@ import pyautogui
 import random
 import math
 import pydirectinput as pdi
-
-
-debug = True
+import argparse
+import sys
 
 bombkey = 'space' # Bomb keybind
 sightkey = 'f7'  # Key for Bomb Sight
 vckey = 'f4' # Key for Virtual Cockpit
-bombsize = 250  # Bomb payload in KGs
 bombbay = True # Does the plane have a bomb-bay?
-base_number = 3 # The number of enemy bases at the start of a round
 
 screensize = pyautogui.size()
 sx, sy = screensize
 posofclimb = int((sy / 2) - 40) # How many pixels up from the flat mouseposition to begin climbing (the number is offset from the middle of the screen)
+
+# UI stuff
+parser = argparse.ArgumentParser()
+parser.add_argument("--debug", type=lambda x: x.lower() == "true", default=False)
+parser.add_argument("--bombsize", type=int, default=250)
+parser.add_argument("--base", type=int, default=3)
+args = parser.parse_args()
+
+debug = args.debug
+bombsize = args.bombsize
+base_number = args.base
 
 def searchScreen(timg):
     target_img_orig = cv2.imread(str(timg), cv2.IMREAD_GRAYSCALE)
@@ -111,3 +119,4 @@ if base_locations:
 
 else:
     print("Could not find any bases!")
+    sys.exit(1)
