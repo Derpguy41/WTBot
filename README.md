@@ -1,6 +1,13 @@
 # WTBot
 War thunder base bombing bot written with python
 
+- Completely external
+- Openly viewable
+- Probably shitty
+
+
+It's not malware, I just can't justify spending hundreds of hours to fly cool pixel planes
+
 ## Required modules:
 CV2, numpy, pillow, time, pyautogui, random, math, pydirectinput
 
